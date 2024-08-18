@@ -1,6 +1,5 @@
 const login = (req, res) => {
-    res.send("login");
-  };
-  
-  module.exports = login;
-  
+  res.render("login");
+};
+
+module.exports = login;

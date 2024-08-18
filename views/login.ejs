@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,-25"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="/stylesheets/auth.css" />
+    <link rel="stylesheet" href="/stylesheets/home.css" />
+  </head>
+  <body>
+    <div class="w-full min-h-screen bg-zinc-900 px-40 poppins-regular">
+      <div class="flex items-center justify-center pt-20">
+        <div class="bg-zinc-800 w-3/4 rounded-xl h-[80vh] grid grid-cols-2">
+          <div class="bg-white rounded-tl-xl rounded-bl-xl">
+            <div
+              class="flex items-center flex-col justify-center w-full h-full px-16"
+            >
+              <h1 class="text-2xl mb-5 font-semibold">Login</h1>
+              <form action="" method="post" class="flex flex-col gap-4 w-full">
+                <div class="">
+                  <small for="username" class="small">Email-Address</small>
+                  <br />
+                  <input
+                    type="text"
+                    placeholder="email-address.."
+                    class="px-5 py-3 rounded-lg border border-zinc-200 outline-none w-full mt-1"
+                  />
+                </div>
+                <div class="">
+                  <small for="username" class="small">Password </small>
+                  <br />
+                  <input
+                    type="password"
+                    placeholder="confirm your password.."
+                    class="px-5 py-3 rounded-lg border border-zinc-200 outline-none w-full mt-1"
+                  />
+                </div>
+
+                <input
+                  type="submit"
+                  value="Login Now"
+                  class="px-5 py-2 bg-blue-600 rounded-full cursor-pointer text-white"
+                />
+                <small class="w-full text-center">
+                  Don't have an account? <a href="/register"><b>Sign up</b></a>
+                </small>
+              </form>
+            </div>
+          </div>
+          <div
+            class="loginImage rounded-tr-xl rounded-br-xl flex items-center justify-center"
+          >
+            <!-- <div class="">
+              <h1 class="text-4xl font-semibold text-zinc-900 mb-1">
+                Save thousands <br />
+                of reading hours
+              </h1>
+              <small class="text-zinc-600"
+                >Join thousands of creators and minimalist <br />
+                high-quality blog posts in minutes.</small
+              >
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

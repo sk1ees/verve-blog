@@ -1,0 +1,16 @@
+.registerImage {
+  background: url("https://i.pinimg.com/564x/21/89/e8/2189e8dbf6f3eef3fddedd5a09e888ba.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.loginImage {
+  background: url("https://i.pinimg.com/564x/4e/11/ec/4e11ec035f97645a64df0d2cfb3c7631.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.small {
+  font-weight: bold;
+}
+label {
+  font-size: small;
+}
