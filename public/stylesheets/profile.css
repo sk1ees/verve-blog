@@ -1,0 +1,7 @@
+.profileGrid {
+  grid-template-rows: repeat(1, 150px 1fr);
+}
+.profileItems {
+  display: grid;
+  grid-template-rows: repeat(1, 160px 70px 1fr);
+}

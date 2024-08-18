@@ -1,0 +1,149 @@
+<%- include('./partials/header') %>
+<!-- quote  -->
+<div class="flex items-center justify-center">
+  <div
+    class="relative grid profileGrid w-[60vw] h-[70vh] mt-12 rounded-[3rem] bg-zinc-800 overflow-hidden shadow-2xl"
+  >
+    <div class="w-full overflow-hidden">
+      <img
+        src="https://plus.unsplash.com/premium_photo-1672201106204-58e9af7a2888?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29sb3IlMjBncmFkaWVudHxlbnwwfHwwfHx8MA%3D%3D"
+        alt=""
+      />
+    </div>
+    <div class="profileItems">
+      <div class="bg-zinc-800 text-zinc-100">
+        <div class="">
+          <img
+            class="w-40 h-40 absolute top-[50px] border border-8 left-[30px] rounded-full object-cover"
+            src="https://i.pinimg.com/564x/08/2a/16/082a163c0a7b6ab4a27eea77735d39f0.jpg"
+            alt=""
+          />
+          <span
+            class="material-symbols-outlined bg-white p-2 rounded-full text-black absolute top-[40px] right-[30px]"
+          >
+            edit_square
+          </span>
+        </div>
+
+        <div class="grid grid-cols-2">
+          <div class="h-screen pt-16 ps-[2vw]">
+            <h1 class="font-bold text-3xl pt-1">Deep Sarkar</h1>
+
+            <h1 class="font-medium text-sm pt-1 text-zinc-400">@deeeprr</h1>
+            <h1 class="font-medium text-md pt-1">Siliguri, WestBengal</h1>
+          </div>
+          <div class="h-screen">
+            <div class="float-end me-6 mt-3 flex flex-col">
+              <h1 class="px-3 py-1 flex items-center gap-3">
+                Current role
+                <span class="material-symbols-rounded"> cloud_done </span>
+              </h1>
+
+              <h1
+                class="px-3 py-1 bg-green-900 border border-green-100 text-white rounded-full text-sm font-medium mt-2"
+              >
+                Software Engineer
+              </h1>
+              <h1 class="ps-16 py-1 flex items-center mt-[3vw] gap-3">
+                Skills
+                <span class="material-symbols-rounded"> new_releases </span>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="bg-zinc-800 text-zinc-100 flex justify-between items-center px-7"
+      >
+        <div class="flex list-none gap-4">
+          <a href="">
+            <li
+              class="flex items-center gap-4 bg-zinc-900 text-white py-2 font-medium rounded-full px-4 text-md"
+            >
+              <span class="material-symbols-outlined text-white">
+                edit_square
+              </span>
+              Edit Profile
+            </li>
+          </a>
+          <a href="/logout">
+            <li
+              class="flex items-center gap-4 bg-red-500 text-white py-2 font-medium rounded-full px-3 text-md"
+            >
+              <span class="material-symbols-rounded"> logout </span>Logout
+            </li>
+          </a>
+        </div>
+        <div class="flex list-none gap-4">
+          <li class="bg-purple-800 font-medium rounded-full px-3 text-sm py-1">
+            Fashion
+          </li>
+          <li class="bg-purple-800 font-medium rounded-full px-3 text-sm py-1">
+            Sports
+          </li>
+          <li class="bg-purple-800 font-medium rounded-full px-3 text-sm py-1">
+            Gaming
+          </li>
+          <li class="bg-purple-800 font-medium rounded-full px-3 text-sm py-1">
+            Movies
+          </li>
+        </div>
+      </div>
+      <div class="flex gap-5 bg-zinc-800 text-zinc-100 px-5 pb-5">
+        <div
+          class="bg-purple-900 rounded-lg w-full h-full flex justify-between items-center px-4"
+        >
+          <div class="">
+            <h1 class="font-semibold">Create Posts</h1>
+            <h1 class="font-medium text-purple-400 text-sm text-wrap">
+              Lorem ipsum dolor sit amet. Lorem, ipsum dolor.
+            </h1>
+          </div>
+          <div class="">
+            <span
+              class="material-symbols-rounded bg-white rounded-full text-2xl border border-purple-700 border-2 px-1 text-purple-700"
+            >
+              arrow_forward
+            </span>
+          </div>
+        </div>
+        <div
+          class="bg-purple-900 rounded-lg w-full h-full flex justify-between items-center px-4"
+        >
+          <div class="">
+            <h1 class="font-semibold">Manage Posts</h1>
+            <h1 class="font-medium text-purple-400 text-sm text-wrap">
+              Lorem ipsum dolor sit amet. Lorem, ipsum dolor.
+            </h1>
+          </div>
+          <div class="">
+            <span
+              class="material-symbols-rounded bg-white rounded-full text-2xl border border-purple-700 border-2 px-1 text-purple-700"
+            >
+              arrow_forward
+            </span>
+          </div>
+        </div>
+        <div
+          class="bg-purple-900 rounded-lg w-full h-full flex justify-between items-center px-4"
+        >
+          <div class="">
+            <h1 class="font-semibold">Explore Posts</h1>
+            <h1 class="font-medium text-purple-400 text-sm text-wrap">
+              Lorem ipsum dolor sit amet. Lorem, ipsum dolor.
+            </h1>
+          </div>
+          <div class="">
+            <span
+              class="material-symbols-rounded bg-white rounded-full text-2xl border border-purple-700 border-2 px-1 text-purple-700"
+            >
+              arrow_forward
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('./partials/footer') %>
