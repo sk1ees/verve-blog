@@ -29,10 +29,15 @@
               class="flex items-center flex-col justify-center w-full h-full px-16"
             >
               <h1 class="text-2xl mb-5 font-semibold">Create an account</h1>
-              <form action="" method="post" class="flex flex-col gap-2 w-full">
+              <form
+                action="/register"
+                method="post"
+                class="flex flex-col gap-2 w-full"
+              >
                 <div class="">
                   <small for="username" class="small">Name</small> <br />
                   <input
+                    name="name"
                     type="text"
                     placeholder="Enter your name.."
                     class="outline-none px-5 py-3 rounded-lg border border-zinc-200 w-full mt-1"
@@ -42,16 +47,18 @@
                   <small for="username" class="small">Email-Address</small>
                   <br />
                   <input
-                    type="text"
+                    name="email"
+                    type="email"
                     placeholder="email-address.."
                     class="px-5 py-3 rounded-lg border border-zinc-200 outline-none w-full mt-1"
                   />
                 </div>
-         
+
                 <div class="">
                   <small for="username" class="small">Password </small>
                   <br />
                   <input
+                    name="password"
                     type="password"
                     placeholder="confirm your password.."
                     class="px-5 py-3 rounded-lg border border-zinc-200 outline-none w-full mt-1"

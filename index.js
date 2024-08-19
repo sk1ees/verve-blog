@@ -11,20 +11,29 @@ const login = require("./routes/auth/login");
 const logout = require("./routes/auth/logout");
 const register = require("./routes/auth/register");
 const path = require("path");
-
+const db = require("./middleware/db");
+const isLoggedIn = require("./middleware/isLoggedIn");
+const postRegister = require("./routes/post-routes/postRegister");
+const postLogin = require("./routes/post-routes/postLogin");
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
 // initial - routes
-app.get("/home", home);
-app.get("/profile", profile);
-app.get("/community", community);
-app.get("/creator", creator);
-app.get("/create", createPost);
-app.get("/manage_posts", managePost);
-app.get("/post/:id", showPost);
+app.get("/home", isLoggedIn, home);
+app.get("/profile", isLoggedIn, profile);
+app.get("/community", isLoggedIn, community);
+app.get("/creator", isLoggedIn, creator);
+app.get("/create", isLoggedIn, createPost);
+app.get("/manage_posts", isLoggedIn, managePost);
+app.get("/post/:id", isLoggedIn, showPost);
+
+//post-routes
+app.post("/register", postRegister);
+app.post("/login", postLogin);
 
 //.env setup
 require("dotenv").config();
