@@ -33,6 +33,7 @@
                 action="/register"
                 method="post"
                 class="flex flex-col gap-2 w-full"
+                enctype="multipart/form-data"
               >
                 <div class="">
                   <small for="username" class="small">Name</small> <br />
@@ -61,7 +62,14 @@
                     name="password"
                     type="password"
                     placeholder="confirm your password.."
-                    class="px-5 py-3 rounded-lg border border-zinc-200 outline-none w-full mt-1"
+                    class="px-5 py-3 mb-5 rounded-lg border border-zinc-200 outline-none w-full mt-1"
+                  />
+                  <input
+                    type="file"
+                    name="profileImage"
+                    accept="image/*"
+                    required
+                   
                   />
                 </div>
 

@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const upload = require("./config/cloudinary");
 const home = require("./routes/initial-routes/home");
 const profile = require("./routes/initial-routes/profile");
 const community = require("./routes/initial-routes/community");
@@ -8,7 +9,6 @@ const createPost = require("./routes/initial-routes/createPost");
 const managePost = require("./routes/initial-routes/managePost");
 const showPost = require("./routes/initial-routes/showPost");
 const login = require("./routes/auth/login");
-
 const register = require("./routes/auth/register");
 const path = require("path");
 const db = require("./middleware/db");
@@ -33,7 +33,7 @@ app.get("/manage_posts", isLoggedIn, managePost);
 app.get("/post/:id", isLoggedIn, showPost);
 
 //post-routes
-app.post("/register", postRegister);
+app.post("/register", upload.single("profileImage"), postRegister);
 app.post("/login", postLogin);
 
 //.env setup
