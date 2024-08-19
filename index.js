@@ -8,7 +8,7 @@ const createPost = require("./routes/initial-routes/createPost");
 const managePost = require("./routes/initial-routes/managePost");
 const showPost = require("./routes/initial-routes/showPost");
 const login = require("./routes/auth/login");
-const logout = require("./routes/auth/logout");
+
 const register = require("./routes/auth/register");
 const path = require("path");
 const db = require("./middleware/db");
@@ -16,6 +16,7 @@ const isLoggedIn = require("./middleware/isLoggedIn");
 const postRegister = require("./routes/post-routes/postRegister");
 const postLogin = require("./routes/post-routes/postLogin");
 const cookieParser = require("cookie-parser");
+const postLogout = require("./routes/post-routes/postLogout");
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
@@ -40,7 +41,7 @@ require("dotenv").config();
 
 //authentication-related-routes
 app.get("/login", login);
-app.get("/logout", logout);
+app.get("/logout", postLogout);
 app.get("/register", register);
 
 app.listen(process.env.PORT, () => {
