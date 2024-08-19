@@ -26,11 +26,13 @@
         </div>
 
         <div class="grid grid-cols-2">
-          <div class="h-screen pt-16 ps-[2vw]">
-            <h1 class="font-bold text-3xl pt-1">Deep Sarkar</h1>
+          <div class="h-screen pt-20 ps-[2vw]">
+            <h1 class="font-bold text-3xl pt-1"><%=user.name%></h1>
 
-            <h1 class="font-medium text-sm pt-1 text-zinc-400">@deeeprr</h1>
-            <h1 class="font-medium text-md pt-1">Siliguri, WestBengal</h1>
+            <h1 class="font-medium text-sm pt-1 text-zinc-400">
+              <%=user.email%>
+            </h1>
+            <!-- <h1 class="font-medium text-md pt-1">Siliguri, WestBengal</h1> -->
           </div>
           <div class="h-screen">
             <div class="float-end me-6 mt-3 flex flex-col">
@@ -76,18 +78,11 @@
           </a>
         </div>
         <div class="flex list-none gap-4">
+          <% Object.keys(user.tags).forEach((tag) => { %>
           <li class="bg-purple-800 font-medium rounded-full px-3 text-sm py-1">
-            Fashion
+            <%= tag %>
           </li>
-          <li class="bg-purple-800 font-medium rounded-full px-3 text-sm py-1">
-            Sports
-          </li>
-          <li class="bg-purple-800 font-medium rounded-full px-3 text-sm py-1">
-            Gaming
-          </li>
-          <li class="bg-purple-800 font-medium rounded-full px-3 text-sm py-1">
-            Movies
-          </li>
+          <% }) %>
         </div>
       </div>
       <div class="flex gap-5 bg-zinc-800 text-zinc-100 px-5 pb-5">
