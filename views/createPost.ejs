@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,-25"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="/stylesheets/auth.css" />
+    <link rel="stylesheet" href="/stylesheets/home.css" />
+    <script src="/javascripts/postPreview.js"></script>
+  </head>
+  <body>
+    <div class="w-full min-h-screen bg-zinc-900 px-40 poppins-regular">
+      <div class="flex items-center justify-center pt-20">
+        <div class="bg-zinc-800 w-full rounded-xl h-[80vh] grid grid-cols-2">
+          <div class="bg-white rounded-tl-xl rounded-bl-xl">
+            <div
+              class="flex items-center flex-col justify-center w-full h-full px-16"
+            >
+              <h1 class="text-2xl mb-5 font-semibold">Create Your Post</h1>
+              <form action="" method="post" class="flex flex-col gap-4 w-full">
+                <div class="">
+                  <small for="username" class="small">Heading</small>
+                  <br />
+                  <input
+                    id="inputHeading"
+                    name="heading"
+                    type="text"
+                    placeholder="Add your post heading"
+                    class="px-5 py-3 mb-4 rounded-lg border border-zinc-200 outline-none w-full mt-1"
+                    onkeyup="previewHeader()"
+                    maxlength="45"
+                  />
+                  <input
+                    type="file"
+                    name="profileImage"
+                    accept="image/*"
+                    onchange="previewImage(event);"
+                    required
+                  />
+                </div>
+                <div class="">
+                  <small for="password" class="small">Post Description </small>
+                  <br />
+                  <textarea
+                    name=""
+                    id="inputDesc"
+                    placeholder="write something about your post.."
+                    class="px-5 py-3 h-32 resize-none rounded-lg border border-zinc-200 outline-none w-full mt-1"
+                    onkeyup="previewDesc()"
+                  ></textarea>
+                </div>
+
+                <input
+                  type="submit"
+                  value="Create Post"
+                  class="px-5 py-2 bg-blue-600 rounded-full cursor-pointer text-white"
+                />
+              </form>
+            </div>
+          </div>
+          <div class="p-5 bg-white overflow-y-hidden">
+            <div class="w-full h-full overflow-y-scroll p-5 rounded-lg">
+              <img
+                class="w-full h-40 object-cover rounded-t-lg"
+                id="preview_image"
+                src="https://static.vecteezy.com/system/resources/previews/006/575/430/non_2x/cute-nature-floral-flower-leaf-minimalist-girly-background-wallpaper-vector.jpg"
+                alt=""
+              />
+              <h1
+                id="previewHeading"
+                class="text-3xl flex items-center justify-center text-zinc-400 break-words text-center font-semibold text-wrap bg-zinc-200 rounded-b-md p-4 w-full h-32"
+              >
+                Write some catchy heading that define your post..
+              </h1>
+              <h1
+                class="mt-6 bg-zinc-100 text-zinc-400 rounded-md p-5"
+                id="previewDesc"
+              >
+                Write you beautiful thoughts that's on your mind!..
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

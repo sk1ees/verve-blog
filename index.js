@@ -28,7 +28,7 @@ app.get("/home", isLoggedIn, home);
 app.get("/profile", isLoggedIn, profile);
 app.get("/community", isLoggedIn, community);
 app.get("/creator", isLoggedIn, creator);
-app.get("/create", isLoggedIn, createPost);
+app.get("/create-post", isLoggedIn, createPost);
 app.get("/manage_posts", isLoggedIn, managePost);
 app.get("/post/:id", isLoggedIn, showPost);
 
