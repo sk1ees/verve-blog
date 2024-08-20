@@ -30,7 +30,12 @@
               class="flex items-center flex-col justify-center w-full h-full px-16"
             >
               <h1 class="text-2xl mb-5 font-semibold">Create Your Post</h1>
-              <form action="" method="post" class="flex flex-col gap-4 w-full">
+              <form
+                action="/create-post"
+                method="post"
+                enctype="multipart/form-data"
+                class="flex flex-col gap-4 w-full"
+              >
                 <div class="">
                   <small for="username" class="small">Heading</small>
                   <br />
@@ -45,7 +50,7 @@
                   />
                   <input
                     type="file"
-                    name="profileImage"
+                    name="postBanner"
                     accept="image/*"
                     onchange="previewImage(event);"
                     required
@@ -55,7 +60,7 @@
                   <small for="password" class="small">Post Description </small>
                   <br />
                   <textarea
-                    name=""
+                    name="desc"
                     id="inputDesc"
                     placeholder="write something about your post.."
                     class="px-5 py-3 h-32 resize-none rounded-lg border border-zinc-200 outline-none w-full mt-1"
@@ -71,12 +76,14 @@
               </form>
             </div>
           </div>
-          <div class="p-5 bg-white overflow-y-hidden">
+          <div
+            class="p-5 bg-white overflow-y-hidden rounded-br-xl rounded-tr-xl"
+          >
             <div class="w-full h-full overflow-y-scroll p-5 rounded-lg">
               <img
                 class="w-full h-40 object-cover rounded-t-lg"
                 id="preview_image"
-                src="https://static.vecteezy.com/system/resources/previews/006/575/430/non_2x/cute-nature-floral-flower-leaf-minimalist-girly-background-wallpaper-vector.jpg"
+                src="https://vonex.com.au/wp-content/uploads/2021/09/MicrosoftTeams-image-6-768x259.jpg"
                 alt=""
               />
               <h1

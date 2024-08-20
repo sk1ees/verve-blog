@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const upload = require("./config/cloudinary");
+const uploadPost = require("./config/postBanner");
 const home = require("./routes/initial-routes/home");
 const profile = require("./routes/initial-routes/profile");
 const community = require("./routes/initial-routes/community");
@@ -14,6 +15,7 @@ const path = require("path");
 const db = require("./middleware/db");
 const isLoggedIn = require("./middleware/isLoggedIn");
 const postRegister = require("./routes/post-routes/postRegister");
+const postCreate = require("./routes/post-routes/postCreate");
 const postLogin = require("./routes/post-routes/postLogin");
 const cookieParser = require("cookie-parser");
 const postLogout = require("./routes/post-routes/postLogout");
@@ -29,11 +31,18 @@ app.get("/profile", isLoggedIn, profile);
 app.get("/community", isLoggedIn, community);
 app.get("/creator", isLoggedIn, creator);
 app.get("/create-post", isLoggedIn, createPost);
-app.get("/manage_posts", isLoggedIn, managePost);
+app.get("/manage-posts", isLoggedIn, managePost);
 app.get("/post/:id", isLoggedIn, showPost);
 
 //post-routes
 app.post("/register", upload.single("profileImage"), postRegister);
+app.post(
+  "/create-post",
+  uploadPost.single("postBanner"),
+  isLoggedIn,
+  postCreate
+);
+
 app.post("/login", postLogin);
 
 //.env setup
