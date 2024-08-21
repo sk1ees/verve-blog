@@ -6,43 +6,42 @@
     <h1 class="text-3xl">Your Contributed Posts</h1>
   </div>
   <div class="grid grid-cols-4 gap-7 w-full text-white">
-    <%if(user.post.length> 0){%>
-        
-        <%user.post.forEach((post)=>{%>
-
-    <div class="h-96">
-      <img
-        class="w-full h-[40%] rounded-lg object-cover"
-        src="<%=post.banner%>"
-        alt=""
-      />
-      <div class="flex flex-col gap-4 py-5">
-        <div class="flex gap-6 items-center">
-          <div class="flex gap-3 items-center">
-            <div
-              class="profileNav w-8 h-8 rounded-full bg-white object-cover overflow-hidden"
-            >
-              <img src="<%=user.profileImage%>" alt="" class="object-cover" />
+    <%if(user.post.length> 0){%> <%user.post.forEach((post)=>{%>
+    <a href="/post/<%=post._id%>">
+      <div class="h-96">
+        <img
+          class="w-full h-[40%] rounded-lg object-cover"
+          src="<%=post.banner%>"
+          alt=""
+        />
+        <div class="flex flex-col gap-4 py-5">
+          <div class="flex gap-6 items-center">
+            <div class="flex gap-3 items-center">
+              <div
+                class="profileNav w-8 h-8 rounded-full bg-white object-cover overflow-hidden"
+              >
+                <img src="<%=user.profileImage%>" alt="" class="object-cover" />
+              </div>
+              <h1 class="text-purple-300 text-[13px]"><%=user.email%> •</h1>
             </div>
-            <h1 class="text-purple-300 text-[13px]"><%=user.email%> •</h1>
-          </div>
 
-          <small class="text-zinc-400 text-[12px]">3 hrs ago</small>
-        </div>
-        <h1 class="text-xl text-white text-wrap">
-          <%=(post.heading).slice(0,25)%>..
-        </h1>
-        <h1 class="h-12"><%=(post.desc).slice(0,60)%>...</h1>
-        <div class="flex gap-3 items-center items-end">
-          <h1
+            <small class="text-zinc-400 text-[12px]">3 hrs ago</small>
+          </div>
+          <h1 class="text-xl text-white text-wrap">
+            <%=(post.heading).slice(0,25)%>..
+          </h1>
+          <h1 class="h-12"><%=(post.desc).slice(0,60)%>...</h1>
+          <div class="flex gap-3 items-center items-end">
+            <!-- <h1
             class="text-purple-200 px-5 py-1 border border-purple-400 bg-purple-900 rounded-3xl"
           >
             Sports
-          </h1>
-          <small class="text-zinc-400">4 mins read</small>
+          </h1> -->
+            <small class="text-zinc-400">4 mins read</small>
+          </div>
         </div>
-      </div>
-    </div>
+      </div></a
+    >
     <%})}else{%>
     <h1 class="text-xl text-white w-full">nothing to see here.</h1>
     <%}%>
