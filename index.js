@@ -9,6 +9,8 @@ const creator = require("./routes/initial-routes/creator");
 const createPost = require("./routes/initial-routes/createPost");
 const managePost = require("./routes/initial-routes/managePost");
 const showPost = require("./routes/initial-routes/showPost");
+const creatorPost = require("./routes/initial-routes/creatorPost");
+const editPost = require("./routes/initial-routes/editPost");
 const login = require("./routes/auth/login");
 const register = require("./routes/auth/register");
 const path = require("path");
@@ -16,9 +18,11 @@ const db = require("./middleware/db");
 const isLoggedIn = require("./middleware/isLoggedIn");
 const postRegister = require("./routes/post-routes/postRegister");
 const postCreate = require("./routes/post-routes/postCreate");
+const postDelete = require("./routes/post-routes/postDelete");
 const postLogin = require("./routes/post-routes/postLogin");
 const cookieParser = require("cookie-parser");
 const postLogout = require("./routes/post-routes/postLogout");
+const PostEdit = require("./routes/post-routes/postEdit");
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
@@ -33,6 +37,7 @@ app.get("/creator", isLoggedIn, creator);
 app.get("/create-post", isLoggedIn, createPost);
 app.get("/manage-posts", isLoggedIn, managePost);
 app.get("/post/:id", isLoggedIn, showPost);
+app.get("/creator/:name", isLoggedIn, creatorPost);
 
 //post-routes
 app.post("/register", upload.single("profileImage"), postRegister);
@@ -42,8 +47,11 @@ app.post(
   isLoggedIn,
   postCreate
 );
+app.post("/edit/:id", uploadPost.single("postBanner"), isLoggedIn, PostEdit);
 
 app.post("/login", postLogin);
+app.get("/delete/:id", isLoggedIn, postDelete);
+app.get("/edit/:id", isLoggedIn, editPost);
 
 //.env setup
 require("dotenv").config();
