@@ -6,7 +6,7 @@
     <h1 class="text-3xl"><%=user.name%> Posts</h1>
   </div>
   <div class="grid grid-cols-4 gap-7 w-full text-white">
-    <%if(user.post.length> 0){%> <%user.post.forEach((post)=>{%>
+    <%if(user.post.length> 0){%> <%user.post.reverse().forEach((post)=>{%>
     <a href="/post/<%=post._id%>">
       <div class="h-96">
         <img
@@ -27,7 +27,9 @@
               </h1>
             </div>
 
-            <small class="text-zinc-400 text-[12px]">3 hrs ago</small>
+            <small class="text-zinc-400 text-[12px]"
+              ><%=timeAgo(post.createdAt)%></small
+            >
           </div>
           <h1 class="text-xl text-white text-wrap">
             <%=(post.heading).slice(0,25)%>..

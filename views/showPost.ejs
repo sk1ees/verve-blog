@@ -20,7 +20,9 @@
           <div class="">
             <h1 class="flex items-center gap-3">
               <span class="material-symbols-outlined"> cloud_upload </span>
-              Posted by <%=post.user.name%> , 2024
+              Posted by<a href="/creator/<%=post.user.name%>"
+                ><span class="text-purple-500">- @<%=post.user.name%></span></a
+              >
             </h1>
           </div>
         </div>

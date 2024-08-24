@@ -9,6 +9,7 @@
 
   <div class="grid grid-cols-4 gap-7 w-full text-white">
     <%post.reverse().forEach((postItem)=>{%>
+
     <a href="/post/<%=postItem._id%>">
       <div class="h-96">
         <img
@@ -33,7 +34,9 @@
               </h1>
             </div>
 
-            <small class="text-zinc-400 text-[12px]">3 hours ago</small>
+            <small class="text-zinc-400 text-[12px]"
+              ><%=timeAgo(postItem.createdAt)%></small
+            >
           </div>
           <h1 class="text-xl text-white overflow-hidden whitespace-nowrap">
             <%=(postItem.heading).slice(0,23)%>..

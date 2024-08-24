@@ -11,207 +11,111 @@
   </h1>
 </div>
 <!-- latest-post  -->
-<div class="grid grid-cols-2 gap-12 w-full h-[40vh] mt-7 mb-32 items-center">
-  <div class="latestPhoto">
-    <div class="image bg-zinc-800 w-full h-full rounded-lg overflow-hidden">
-      <img src="https://i.ytimg.com/vi/Idh8n5XuYIA/maxresdefault.jpg" alt="" />
+<%post.forEach((recentPost)=>{%>
+<a href="/post/<%=recentPost._id%>">
+  <div class="grid grid-cols-2 gap-12 w-full h-[40vh] mt-7 mb-32 items-center">
+    <div class="latestPhoto">
+      <div class="image bg-zinc-800 w-full h-full rounded-lg overflow-hidden">
+        <img src="<%=recentPost.banner%>" alt="" />
+      </div>
     </div>
-  </div>
-  <div class="latestDesc">
-    <div class="w-full h-full cursor-pointer p-5 rounded-lg text-zinc-300">
-      <div class="flex flex-col gap-4 py-5 px-6">
-        <div class="flex gap-3 items-center">
-          <div
-            class="profileNav w-8 h-8 rounded-full bg-white object-cover overflow-hidden"
-          >
-            <img
-              src="https://i.pinimg.com/564x/08/2a/16/082a163c0a7b6ab4a27eea77735d39f0.jpg"
-              alt=""
-              class="object-cover"
-            />
-          </div>
-          <h1 class="text-purple-300">@lagyeonLama</h1>
+    <div class="latestDesc">
+      <div class="w-full h-full cursor-pointer p-5 rounded-lg text-zinc-300">
+        <div class="flex flex-col gap-4 py-5 px-6">
+          <div class="flex gap-3 items-center">
+            <div
+              class="profileNav w-8 h-8 rounded-full bg-white object-cover overflow-hidden"
+            >
+              <img
+                src="https://i.pinimg.com/564x/08/2a/16/082a163c0a7b6ab4a27eea77735d39f0.jpg"
+                alt=""
+                class="object-cover"
+              />
+            </div>
+            <h1 class="text-purple-300">
+              @<%=recentPost.user.email.split('@')[0]%>
+            </h1>
 
-          <small class="text-zinc-400">32 minutes ago</small>
-        </div>
-        <h1 class="text-3xl text-white text-wrap">
-          Is the Deadpool X Wolverine connected with MCU?
-        </h1>
-        <h1>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic assumenda
-          dignissimos nesciunt nemo. Lorem ipsum dolor sit amet consectetur ...
-        </h1>
-        <div class="flex gap-3 items-center">
-          <h1
-            class="text-purple-200 px-5 py-1 border border-purple-400 bg-purple-900 rounded-3xl"
-          >
-            Movies
+            <small class="text-zinc-400"
+              ><%=timeAgo(recentPost.createdAt)%></small
+            >
+          </div>
+          <h1 class="text-3xl text-white text-wrap">
+            <%=recentPost.heading%>...
           </h1>
-          <small class="text-zinc-400">4 mins read</small>
+          <h1><%=recentPost.desc.slice(0,180)%>...</h1>
+          <div class="flex gap-3 items-center">
+            <h1
+              class="text-purple-200 px-5 py-1 border border-purple-400 bg-purple-900 rounded-3xl"
+            >
+              Movies
+            </h1>
+            <small class="text-zinc-400">4 mins read</small>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-
+</a>
+<% })%>
 <!-- all posts  -->
 <div class="text-white">
   <div class="flex justify-between mb-12 text-center">
     <h1 class="text-3xl">Latest Posts</h1>
-    <h1 class="flex items-center gap-3 text-purple-200">
-      See All
-      <span class="material-symbols-rounded"> trending_flat </span>
-    </h1>
+    <a href="/community">
+      <h1 class="flex items-center gap-3 text-purple-200">
+        See All
+        <span class="material-symbols-rounded"> trending_flat </span>
+      </h1>
+    </a>
   </div>
   <div class="grid grid-cols-4 gap-7 w-full text-white">
-    <div class="h-[80vh]">
-      <img
-        class="w-full h-[40%] rounded-lg object-cover"
-        src="https://i.pinimg.com/564x/2b/4a/de/2b4ade12c7ce59afba89acd6559d053e.jpg"
-        alt=""
-      />
-      <div class="flex flex-col gap-4 py-5">
-        <div class="flex gap-4 items-center">
-          <div class="flex gap-3 items-center">
-            <div
-              class="profileNav w-8 h-8 rounded-full bg-white object-cover overflow-hidden"
-            >
-              <img
-                src="https://i.pinimg.com/564x/08/2a/16/082a163c0a7b6ab4a27eea77735d39f0.jpg"
-                alt=""
-                class="object-cover"
-              />
+    <%fourRecentPost.forEach((postItem)=>{%>
+    <a href="/post/<%=postItem._id%>">
+      <div class="h-[80vh]">
+        <img
+          class="w-full h-[40%] rounded-lg object-cover"
+          src="<%=postItem.banner%>"
+          alt=""
+        />
+        <div class="flex flex-col gap-4 py-5">
+          <div class="flex gap-4 items-center justify-between">
+            <div class="flex gap-3 items-center">
+              <div
+                class="profileNav w-8 h-8 rounded-full bg-white object-cover overflow-hidden"
+              >
+                <img
+                  src="<%=postItem.user.profileImage%>"
+                  alt=""
+                  class="object-cover"
+                />
+              </div>
+              <h1 class="text-purple-300 text-md">
+                @<%=postItem.user.email.split('@')[0]%>
+              </h1>
             </div>
-            <h1 class="text-purple-300 text-md">@lagyeonlama •</h1>
-          </div>
 
-          <small class="text-zinc-400 text-[12px]">3 hours ago</small>
-        </div>
-        <h1 class="text-xl text-white text-wrap">
-          Is the Deadpool X Wolverine connected with MCU?
-        </h1>
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic...</h1>
-        <div class="flex gap-3 items-center">
-          <h1
-            class="text-purple-200 px-5 py-1 border border-purple-400 bg-purple-900 rounded-3xl"
-          >
-            Sports
+            <small class="text-zinc-400 text-[12px]"
+              ><%=timeAgo(postItem.createdAt)%></small
+            >
+          </div>
+          <h1 class="text-xl text-white text-wrap">
+            <%=(postItem.heading).slice(0,23)%>..
           </h1>
-          <small class="text-zinc-400">4 mins read</small>
+          <h1><%=(postItem.desc).slice(0,60)%>...</h1>
+          <div class="flex gap-3 items-center">
+            <h1
+              class="text-purple-200 px-5 py-1 border border-purple-400 bg-purple-900 rounded-3xl"
+            >
+              Sports
+            </h1>
+            <small class="text-zinc-400">4 mins read</small>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="h-[80vh]">
-      <img
-        class="w-full h-[40%] rounded-lg object-cover"
-        src="https://i.pinimg.com/564x/3e/1c/c6/3e1cc6829727e94430309f65ae44bd35.jpg"
-        alt=""
-      />
-      <div class="flex flex-col gap-4 py-5">
-        <div class="flex gap-4 items-center">
-          <div class="flex gap-3 items-center">
-            <div
-              class="profileNav w-8 h-8 rounded-full bg-white object-cover overflow-hidden"
-            >
-              <img
-                src="https://i.pinimg.com/564x/08/2a/16/082a163c0a7b6ab4a27eea77735d39f0.jpg"
-                alt=""
-                class="object-cover"
-              />
-            </div>
-            <h1 class="text-purple-300 text-md">@lagyeonlama •</h1>
-          </div>
+    </a>
 
-          <small class="text-zinc-400 text-[12px]">3 hours ago</small>
-        </div>
-        <h1 class="text-xl text-white text-wrap">
-          Is the Deadpool X Wolverine connected with MCU?
-        </h1>
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic...</h1>
-        <div class="flex gap-3 items-center">
-          <h1
-            class="text-purple-200 px-5 py-1 border border-purple-400 bg-purple-900 rounded-3xl"
-          >
-            Gaming
-          </h1>
-          <small class="text-zinc-400">2 mins read</small>
-        </div>
-      </div>
-    </div>
-    <div class="h-[80vh]">
-      <img
-        class="w-full h-[40%] rounded-lg object-cover"
-        src="https://i.pinimg.com/736x/76/62/47/76624788a81e99cfcf3762c548a5288b.jpg"
-        alt=""
-      />
-      <div class="flex flex-col gap-4 py-5">
-        <div class="flex gap-4 items-center">
-          <div class="flex gap-3 items-center">
-            <div
-              class="profileNav w-8 h-8 rounded-full bg-white object-cover overflow-hidden"
-            >
-              <img
-                src="https://i.pinimg.com/564x/08/2a/16/082a163c0a7b6ab4a27eea77735d39f0.jpg"
-                alt=""
-                class="object-cover"
-              />
-            </div>
-            <h1 class="text-purple-300 text-md">@lagyeonlama •</h1>
-          </div>
-
-          <small class="text-zinc-400 text-[10px]">2 minutes ago</small>
-        </div>
-        <h1 class="text-xl text-white text-wrap">
-          Is the Deadpool X Wolverine connected with MCU?
-        </h1>
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic...</h1>
-        <div class="flex gap-3 items-center">
-          <h1
-            class="text-purple-200 px-5 py-1 border border-purple-400 bg-purple-900 rounded-3xl"
-          >
-            Fashion
-          </h1>
-          <small class="text-zinc-400">6 mins read</small>
-        </div>
-      </div>
-    </div>
-    <div class="h-[80vh]">
-      <img
-        class="w-full h-[40%] rounded-lg object-cover"
-        src="https://i.pinimg.com/564x/b4/42/60/b44260fa73c73731b8f365177c3cc9d7.jpg"
-        alt=""
-      />
-      <div class="flex flex-col gap-4 py-5">
-        <div class="flex gap-4 items-center">
-          <div class="flex gap-3 items-center">
-            <div
-              class="profileNav w-8 h-8 rounded-full bg-white object-cover overflow-hidden"
-            >
-              <img
-                src="https://i.pinimg.com/564x/08/2a/16/082a163c0a7b6ab4a27eea77735d39f0.jpg"
-                alt=""
-                class="object-cover"
-              />
-            </div>
-            <h1 class="text-purple-300 text-md">@lagyeonlama •</h1>
-          </div>
-
-          <small class="text-zinc-400 text-[12px]">3 hours ago</small>
-        </div>
-        <h1 class="text-xl text-white text-wrap">
-          Is the Deadpool X Wolverine connected with MCU?
-        </h1>
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic...</h1>
-        <div class="flex gap-3 items-center">
-          <h1
-            class="text-purple-200 px-5 py-1 border border-purple-400 bg-purple-900 rounded-3xl"
-          >
-            Music
-          </h1>
-          <small class="text-zinc-400">1 mins read</small>
-        </div>
-      </div>
-    </div>
+    <% })%>
   </div>
 </div>
 <%- include('./partials/footer') %>
