@@ -30,6 +30,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
 // initial - routes
+app.get("/", isLoggedIn, (req, res) => {
+  res.redirect("/home");
+});
 app.get("/home", isLoggedIn, home);
 app.get("/profile", isLoggedIn, profile);
 app.get("/community", isLoggedIn, community);
